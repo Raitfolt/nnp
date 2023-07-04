@@ -21,6 +21,8 @@ type HTTPServer struct {
 }
 
 func MustLoad() *Config {
+	// TODO: Разобраться как правильно работать с переменными окружения
+	os.Setenv("CONFIG_PATH", "C:/Users/Novoseltsev_AM/go/src/github.com/Raitfolt/nnp/config/local.yaml")
 	configPath := os.Getenv("CONFIG_PATH")
 	if configPath == "" {
 		log.Fatal("CONFIG_PATH is not set")

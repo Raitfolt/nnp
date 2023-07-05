@@ -4,6 +4,8 @@ import (
 	"os"
 
 	"github.com/Raitfolt/nnp/internal/config"
+	"github.com/Raitfolt/nnp/internal/lib/logger/sl"
+	"github.com/Raitfolt/nnp/internal/storage/sqlite"
 	"golang.org/x/exp/slog"
 )
 
@@ -24,6 +26,13 @@ func main() {
 	log.Debug("debug messages are enabled")
 
 	// TODO: init storage: sqlite
+	storage, err := sqlite.New(cfg.StoragePath)
+	if err != nil {
+		log.Error("failed to init storage", sl.Err(err))
+		os.Exit(1)
+	}
+
+	_ = storage
 
 	// TODO: init router: chi, "chi render"
 

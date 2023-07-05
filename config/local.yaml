@@ -1,5 +1,5 @@
 env: "local" # local, dev, prod
-storage_path: "./storage/storage.db"
+storage_path: "C:/Users/Novoseltsev_AM/go/src/github.com/Raitfolt/nnp/storage/storage.db"
 http_server:
   address: "localhost: 8082"
   timeout: 4s
